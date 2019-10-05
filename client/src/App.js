@@ -1,15 +1,23 @@
 import React from 'react';
-import Header from "../src/components/Header/Header";
-import BookSearch from "../src/components/BookSearch/BookSearch";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./components/Header/Header";
+import BookSearch from "./pages/BookSearch/BookSearch";
+import BookSaved from "./pages/BookSaved/BookSaved";
+import NoMatch from "./pages/NoMatch";
 import './App.css';
 
 function App() {
   return (
-    <Header>
-
-    </Header>
-
+    <Router>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={BookSearch} />
+          <Route exact path="/saved" component={BookSaved} />
+          <Route component={NoMatch} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
