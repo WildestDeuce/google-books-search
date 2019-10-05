@@ -1,13 +1,11 @@
 import React from "react";
 
-function Header(props) {
+function BookSaved(props) {
     return (
-        <div className="header">
+        <div className="book-saved">
             <h1>Google Books Search</h1>
             <p>Search for books below.</p>
         </div>
     );
 }
-
-
-export default Header
+export default BookSaved
