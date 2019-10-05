@@ -6,7 +6,7 @@ function BookSearch(props) {
         <section>
             <div className="book-search">
                 <h3>Search for Books Here!</h3>
-                <input type="text">What Book are You Looking For?</input>
+                <input type="text" placeholder="What Book are You Looking For?" />
             </div>
         </section>
     );
