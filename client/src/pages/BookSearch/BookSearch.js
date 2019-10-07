@@ -8,11 +8,11 @@ class Search extends Component {
         title: "",
         author: "",
         synopsis: ""
-    }
+    };
 
     componentDidMount() {
         this.loadBooks();
-    }
+    };
 
     loadBooks = () => {
         API.getBooks()
@@ -20,12 +20,32 @@ class Search extends Component {
                 this.setState({ books: res.data, title: "", author: "", synopsis: "" })
             )
             .catch(err => console.log(err));
-    }
+    };
 
     deleteBook = id => {
         API.deleteBook(id)
             .then(res => this.loadBooks())
             .catch(err => console.log(err));
+    };
+
+    handleInputChange = () => {
+        const { name, value } = event.target;
+        this.state({
+            [name]: value
+        });
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.title && this.state.author) {
+            API.saveBook({
+                title: this.state.tile,
+                author: this.state.author,
+                synopsis: this.state.synopsis
+            })
+                .then(res => this.loadBooks())
+                .catch(err => console.log(err))
+        }
     }
     function BookSearch(props) {
     return (
