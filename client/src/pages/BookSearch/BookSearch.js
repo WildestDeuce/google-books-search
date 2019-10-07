@@ -1,9 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
 import "./BookSearch.css";
 import Results from "./components/Results/Results";
 
+class Search extends Component {
+    state = {
+        books: [],
+        title: "",
+        author: "",
+        synopsis: ""
+    }
 
-function BookSearch(props) {
+    componentDidMount() {
+        this.loadBooks();
+    }
+
+    loadBooks = () => {
+        API.getBooks()
+            .then(res =>
+                this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+            )
+            .catch(err => console.log(err));
+    }
+
+    deleteBook = id => {
+        API.deleteBook(id)
+            .then(res => this.loadBooks())
+            .catch(err => console.log(err));
+    }
+    function BookSearch(props) {
     return (
         <section>
             <div className="book-search">
@@ -11,7 +35,9 @@ function BookSearch(props) {
                 <input type="search" placeholder="Book Title Please" />
             </div>
         </section>
-        <Results />
+
     );
+
+
 }
-export default BookSearch
+export default BookSearch;
