@@ -20,7 +20,13 @@ class Saved extends Component {
             <section>
                 <div className="book-saved">
                     <h3>Saved Books Listed Below</h3>
-
+                    <h1>{this.state.book.title} by {this.state.book.author}</h1>
+                    <article>
+                        <h1>Synopsis: </h1>
+                        <p>
+                            {this.state.book.synopsis}
+                        </p>
+                    </article>
                 </div>
             </section>
         );
