@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./BookSearch.css";
-import Results from "./components/Results/Results";
+import API from "../client/utils/API";
 
-class Search extends Component {
+class BookSearch extends Component {
     state = {
         books: [],
         title: "",
