@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import "./BookSaved.css";
+import API from "../../utils/API";
 
 class Saved extends Component {
     state = {
         books: [],
-        title: "",
-        author: "",
-        synopsis: ""
-    }
+    };
+
+    componentDidMount() {
+        API.getBook(this.props.match.params.id)
+            .then(res => this.setState({ book: res.data }))
+            .catch(err => console.log(err))
+    };
+
+
 
     render() {
         return (
