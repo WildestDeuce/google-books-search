@@ -45,19 +45,19 @@ class Search extends Component {
             })
                 .then(res => this.loadBooks())
                 .catch(err => console.log(err))
-        }
-    }
-    function BookSearch(props) {
-    return (
-        <section>
-            <div className="book-search">
-                <h3>Search for Books Here!</h3>
-                <input type="search" placeholder="Book Title Please" />
-            </div>
-        </section>
+        };
+    };
+    render() {
+        return (
+            <section>
+                <div className="book-search">
+                    <h3>Search for Books Here!</h3>
+                    <input type="search" placeholder="Book Title Please" />
+                </div>
+            </section>
 
-    );
+        );
+    };
 
-
-}
+};
 export default BookSearch;
