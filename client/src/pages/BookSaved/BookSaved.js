@@ -1,11 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
+import "./BookSaved.css";
 
-function BookSaved(props) {
-    return (
-        <div className="book-saved">
-            <h1>Google Books Search</h1>
-            <p>Search for books below.</p>
-        </div>
-    );
-}
+class Saved extends Component {
+    state = {
+        books: [],
+        title: "",
+        author: "",
+        synopsis: ""
+    }
+
+    render() {
+        return (
+            <section>
+                <div className="book-saved">
+                    <h3>Saved Books Listed Below</h3>
+
+                </div>
+            </section>
+        );
+    };
+};
+
+
+
+
 export default BookSaved
