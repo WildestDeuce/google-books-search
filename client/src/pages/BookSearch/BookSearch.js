@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./BookSearch.css";
-import API from "../client/utils/API";
+import API from "../../utils/API";
 
 class BookSearch extends Component {
     state = {
@@ -28,9 +28,9 @@ class BookSearch extends Component {
             .catch(err => console.log(err));
     };
 
-    handleInputChange = () => {
+    handleInputChange = (event) => {
         const { name, value } = event.target;
-        this.state({
+        this.setState({
             [name]: value
         });
     };
@@ -52,7 +52,7 @@ class BookSearch extends Component {
             <section>
                 <div className="book-search">
                     <h3>Search for Books Here!</h3>
-                    <input type="search" placeholder="Book Title Please" />
+                    <input onchange={this.handleInputChange} type="search" placeholder="Book Title Please" />
                 </div>
             </section>
 

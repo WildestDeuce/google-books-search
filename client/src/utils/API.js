@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default API {
+export default {
     getBooks: function () {
         return axios.get("/api/books");
     },

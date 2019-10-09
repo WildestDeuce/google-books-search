@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./BookSaved.css";
 import API from "../../utils/API";
 
-class Saved extends Component {
+class BookSaved extends Component {
     state = {
         books: [],
     };
